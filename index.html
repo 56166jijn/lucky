@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#150508">
+  <title>幸运时刻 · 今日好运抽奖</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <div class="backdrop__halo backdrop__halo--one"></div>
+    <div class="backdrop__halo backdrop__halo--two"></div>
+    <div class="backdrop__ring"></div>
+    <div class="backdrop__dots">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="backdrop__grain"></div>
+    <div class="backdrop__vignette"></div>
+  </div>
+
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="幸运时刻首页">
+        <span class="brand__mark" aria-hidden="true">✦</span>
+        <span class="brand__type">
+          <span class="brand__name">LUCKY MOMENT</span>
+          <span class="brand__cn">幸运时刻</span>
+        </span>
+      </a>
+      <div class="header-note">
+        <span class="header-note__dot" aria-hidden="true"></span>
+        <span>好运正在进行</span>
+        <span class="header-note__divider" aria-hidden="true"></span>
+        <span class="header-note__issue">FORTUNE · NO.01</span>
+      </div>
+    </header>
+
+    <main class="hero">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">
+          <span class="eyebrow__line" aria-hidden="true"></span>
+          今日限定抽奖
+          <span class="eyebrow__en">DAILY LUCK</span>
+        </p>
+        <h1 id="page-title">转出你的<br><span class="gold-text">今日好运</span></h1>
+        <p class="lead">轻轻一点，让指针在光影之间旋转。<br>总有一份惊喜，正等着与你相遇。</p>
+      </section>
+
+      <section class="stage" aria-labelledby="wheel-title">
+        <h2 class="sr-only" id="wheel-title">幸运转盘</h2>
+        <div class="stage__halo" aria-hidden="true"></div>
+        <div class="stage__orbit" aria-hidden="true"></div>
+
+        <div class="wheel" id="wheel">
+          <div class="wheel__bulbs" id="bulbs" aria-hidden="true"></div>
+
+          <div class="wheel__face">
+            <div class="wheel__texture" aria-hidden="true"></div>
+
+            <div class="wheel-label wheel-label--50" data-amount="50">
+              <span class="wheel-label__amount"><span>¥</span>50</span>
+              <span class="wheel-label__rate">10%</span>
+            </div>
+            <div class="wheel-label wheel-label--100" data-amount="100">
+              <span class="wheel-label__amount"><span>¥</span>100</span>
+              <span class="wheel-label__rate">15%</span>
+            </div>
+            <div class="wheel-label wheel-label--150" data-amount="150">
+              <span class="wheel-label__amount"><span>¥</span>150</span>
+              <span class="wheel-label__rate">25%</span>
+            </div>
+            <div class="wheel-label wheel-label--500" data-amount="500">
+              <span class="wheel-label__amount"><span>¥</span>500</span>
+              <span class="wheel-label__rate">50%</span>
+            </div>
+          </div>
+
+          <div class="pointer" id="pointer" aria-hidden="true">
+            <span class="pointer__shaft"></span>
+            <span class="pointer__shine"></span>
+          </div>
+
+          <button class="draw-button" id="drawButton" type="button" aria-label="开始抽奖">
+            <span class="draw-button__orbit" aria-hidden="true"></span>
+            <span class="draw-button__kicker" id="drawKicker">LUCKY DRAW</span>
+            <span class="draw-button__text" id="drawText">开始抽奖</span>
+            <span class="draw-button__hint" id="drawHint">点击启动</span>
+          </button>
+        </div>
+
+        <p class="stage__caption">
+          <span aria-hidden="true">✦</span>
+          点击中心按钮，开启你的幸运时刻
+          <span aria-hidden="true">✦</span>
+        </p>
+      </section>
+
+      <section class="prizes" aria-labelledby="prizes-title">
+        <div class="prizes__head">
+          <h2 class="prizes__title" id="prizes-title">本轮奖池</h2>
+          <span class="prizes__unit">中奖概率</span>
+        </div>
+        <ul class="prizes__list">
+          <li class="prize" style="--tone: #ff8664; --tone-soft: #ffc0ad;">
+            <span class="prize__dot" aria-hidden="true"></span>
+            <span class="prize__amount">¥50</span>
+            <span class="prize__bar" aria-hidden="true"><i style="--width: 10%"></i></span>
+            <span class="prize__rate">10%</span>
+          </li>
+          <li class="prize" style="--tone: #f3c25f; --tone-soft: #ffe6a5;">
+            <span class="prize__dot" aria-hidden="true"></span>
+            <span class="prize__amount">¥100</span>
+            <span class="prize__bar" aria-hidden="true"><i style="--width: 15%"></i></span>
+            <span class="prize__rate">15%</span>
+          </li>
+          <li class="prize" style="--tone: #e85b72; --tone-soft: #ffb5c0;">
+            <span class="prize__dot" aria-hidden="true"></span>
+            <span class="prize__amount">¥150</span>
+            <span class="prize__bar" aria-hidden="true"><i style="--width: 25%"></i></span>
+            <span class="prize__rate">25%</span>
+          </li>
+          <li class="prize" style="--tone: #f5e2b4; --tone-soft: #fff0cf;">
+            <span class="prize__dot" aria-hidden="true"></span>
+            <span class="prize__amount">¥500</span>
+            <span class="prize__bar" aria-hidden="true"><i style="--width: 50%"></i></span>
+            <span class="prize__rate">50%</span>
+          </li>
+        </ul>
+        <p class="prizes__note"><span aria-hidden="true">✦</span> 每次抽奖将随机获得一份奖品，金额以实际发放为准。</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 LUCKY MOMENT</span>
+      <span class="site-footer__center"><i aria-hidden="true"></i> GOOD LUCK ALWAYS <i aria-hidden="true"></i></span>
+      <span>愿每一次转动都有回响</span>
+    </footer>
+  </div>
+
+  <div class="result" id="result" hidden>
+    <div class="result__confetti" id="confetti" aria-hidden="true"></div>
+    <div class="result__panel" role="dialog" aria-modal="true" aria-labelledby="resultTitle" aria-describedby="resultDesc">
+      <span class="result__corner result__corner--tl" aria-hidden="true"></span>
+      <span class="result__corner result__corner--tr" aria-hidden="true"></span>
+      <span class="result__corner result__corner--bl" aria-hidden="true"></span>
+      <span class="result__corner result__corner--br" aria-hidden="true"></span>
+      <p class="result__kicker">CONGRATULATIONS</p>
+      <h2 class="result__title" id="resultTitle">好运降临</h2>
+      <p class="result__label">恭喜你抽中</p>
+      <div class="result__prize"><span class="result__currency">¥</span><span id="resultAmount">150</span><span class="result__unit">元</span></div>
+      <div class="result__divider" aria-hidden="true"><i></i><span>✦</span><i></i></div>
+      <p class="result__desc" id="resultDesc">愿这份小惊喜，点亮你今天的每一刻。</p>
+      <button class="result__button" id="resultButton" type="button">收下好运 <span aria-hidden="true">→</span></button>
+      <p class="result__note">LUCKY MOMENT · 让好运继续发生</p>
+    </div>
+  </div>
+
+  <p class="sr-only" id="announcement" aria-live="polite"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
